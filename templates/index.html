@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row py-4"></div>
+    {% include 'navbar.html' %}
+    <div class="row pt-4"></div>
+    <div class="row">
+        <div class="col-lg-2 col-sm-1"></div>
+        <div class="col-lg-8 col-sm-10">
+            <div class="bg-light rounded-3 raise">
+                <div class="container-fluid pt-5 pb-3">
+                    <h1 class="display-5 fw-bold">👋 Hi, I'm Jofin</h1>
+                    <p class="fs-4 fw-light lh-lg">I am a student from VIT, Vellore. I am a developer👨‍💻 and the
+                        domains that I work on are <strong>Backend Development⛓️</strong>,<strong>Package Development📦</strong> and <strong>Machine Learning🧠</strong>.I majorly work using
+                        Python, Java and Django. I have also worked with other technologies namely ExpressJs, Rust
+                        and Interpreter Designing. I am also a Music Composer🎼 and I have scored for a few shortfilms.</p>
+                    <hr class="dropdown-divider">
+                    <div class="hstack gap-3">
+                    <p class="fs-5 fw-light lh-lg">I'm on <a class="a" href="https://github.com/j0fiN">Github</a>, and <a
+                            href="https://www.linkedin.com/in/jofin-f-archbald-6892b2186/">Linkedin</a>. And here is my <a class="a" href = "mailto:jofinfab@gmail.com">mailId</a>.</p>
+                    <a class="ms-auto" href="{% static 'new_resume.pdf' %}"><button type="button" class="btn btn-sm btn-outline-dark ">⬇️Resume</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-sm-1"></div>
+    </div>
+</div>
+{% include 'footer.html' %}
+
+{% endblock %}

@@ -1,0 +1,25 @@
+<footer>
+    <div class="container-fluid pt-3">
+        <div class="row pt-3"></div>
+        <div class="row pt-5">
+            <div class="col-lg-2 col-sm-1"></div>
+            <div class="col-lg-8 col-sm-10">
+                <hr style="height: 5px;" class="dropdown-divider">
+                <div class="hstack">
+                    <p class="fw-light">Have a good <strong id="day"></strong></p>
+                    <p class="ms-auto fw-light">© 2022 Jofin F Archbald.</p>
+                </div>
+                
+
+            </div>
+            <div class="col-lg-2 col-sm-1"></div>
+        </div>
+    </div>
+</footer>
+<script>
+    const weekday = ["💤Sunday!","🍵Monday!","🥪Tuesday!","🏖️Wednesday!","📄Thursday!","🍿Friday!","🧺Saturday!"];
+
+    const d = new Date();
+    let day = weekday[d.getDay()];
+    document.getElementById('day').innerHTML = day;
+</script>

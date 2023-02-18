@@ -1,0 +1,59 @@
+body {
+    background-color: rgb(252, 252, 252);
+    color: black;
+}
+
+.font {
+    font-family: 'Roboto', sans-serif;
+}
+
+.font-cursive {
+    font-family: 'Roboto', sans-serif;
+}
+.name {
+    font-size: 60px;
+    
+    /* font-family: 'Mountains of Christmas', cursive; */
+}
+
+.title-link {
+    font-size: 30px;
+    font-weight: lighter;
+    color: darkblue;
+    text-decoration: none;
+    transition:all 0.3s ease-in-out;
+}
+.titl {
+    font-size: 30px;
+    font-weight: lighter;
+}
+.title-link:hover {
+    background-color: rgb(85, 85, 85);
+    border-radius: 4px;
+    color: white;
+    transition:all 0.3s ease-in-out;
+}
+
+.text {
+    font-size: 22px;
+    
+}
+
+.round {
+    border-radius: 20px;
+}
+
+.blue {
+    background-color: rgb(123, 183, 235) !important;
+}
+
+a {
+    text-decoration: underline 0.15em rgba(0, 0, 0, 1);
+    text-underline-offset: 0.2em;
+    transition: text-decoration-color 300ms, text-underline-offset 300ms;
+  }
+  
+  a:hover {
+    text-decoration-color: rgba(0, 0, 255, 1);
+    text-underline-offset: 0.4em;
+  }

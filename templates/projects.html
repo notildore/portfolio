@@ -1,0 +1,41 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row py-5"></div>
+    {% include 'navbar.html' %}
+    <div class="row pt-5"></div>
+    <div class="row">
+        <div class="col-md-2 col-sm-1"></div>
+        <div class="col-md-8 col-sm-10">
+            <div class="hstack gap-3">
+                <div style="width: 3px;" class="vr"></div>
+                <h1 class="display-5 fw-bold">Projects</h1>
+            </div>
+
+            <p class="fs-4 fw-light lh-lg">Some of the sculptures🗿 I built.</p>
+        </div>
+        <div class="col-md-2 col-sm-1"></div>
+    </div>
+    <div class="row py-3"></div>
+    {% for project in projects %}
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-6">
+            <a href="{{ project.link }}"><img class="raise rounded img-fluid" src="{% static project.image %}" alt="pcmd"></a>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-4">
+            <h1 class="display-4">{{ project.title }}</h1>
+            <p class="fs-4 fw-normal lh-md">{{ project.about }}</p>
+            {% for l in project.points %}
+            <p class="fs-5 fw-light lh-sm">> {{ l }}</p>
+            {% endfor %}
+        </div>
+        
+    </div>
+    <div class="row py-5"></div>
+    {% endfor %}
+</div>
+{% include 'footer.html' %}
+{% endblock %}

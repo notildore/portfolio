@@ -1,0 +1,70 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+      <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+    </symbol>
+  </svg>
+<div class="container-fluid">
+    <div class="row py-4">
+        {% if message|length > 1 %}
+        <div class="col-md-3 col-sm-1"></div>
+        <div class="col-md-6 col-sm-10">
+            <div class="alert alert-primary d-flex align-items-center" role="alert">
+                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
+                <div>
+                  {{ message }}
+                </div>
+              </div>
+        </div>
+        <div class="col-md-3 col-sm-1"></div>
+        {% endif %}
+    </div>
+    {% include 'navbar.html' %}
+    <div class="row pt-5"></div>
+    <div class="row">
+        <div class="col-md-3 col-sm-1"></div>
+        <div class="col-md-6 col-sm-10">
+            <div class="hstack gap-3">
+                <div style="width: 3px;" class="vr"></div>
+                <h1 class="display-5 fw-bold">Contact</h1>
+            </div>
+
+            <p class="fs-4 fw-light lh-lg">Feel free to reach out to me✉️.</p>
+        </div>
+        <div class="col-md-3 col-sm-1"></div>
+    </div>
+    <div class="row py-3"></div>
+    <div class="row">
+        <div class="col-md-3 col-sm-1"></div>
+        <div class="col-md-6 col-sm-10">
+            <form method="POST" class="row g-3">
+                {% csrf_token %}
+                <div class="col-md-6">
+                    <label for="inputName" class="form-label">Name</label>
+                    <input type="text" name="name" class="form-control" id="inputName">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputEmail" class="form-label">Email</label>
+                    <input type="email" name="email" class="form-control" id="inputEmail">
+                </div>
+                <div class="col-12">
+                    <label for="inputSubject" class="form-label">Subject</label>
+                    <input type="text" name="subject" class="form-control" id="inputSubject">
+                </div>
+                <div class="col-12">
+                    <label class="pb-2" for="Message">Message</label>
+                    <textarea rows="10" name="message" id="Message" class="form-control" aria-label="With textarea"></textarea>
+                  </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-outline-dark">Send Message</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-3 col-sm-1"></div>
+    </div>
+</div>
+{% include 'footer.html' %}
+
+{% endblock %}

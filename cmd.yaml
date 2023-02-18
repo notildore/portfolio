@@ -1,0 +1,9 @@
+hi: echo Hi from pcmd!
+server: py manage.py runserver
+
+
+deploy:
+ - git add .
+ - git commit -m "Update"
+ - git push heroku main
+ - git push
